@@ -1,0 +1,47 @@
+ <div>
+  <h1>Nouveau lien</h1>
+  <form (ngSubmit)="onSubmit()" #linkForm="ngForm">
+    <div class="form-group">
+      <label for="url">URL</label>
+      <input type="text" class="form-control" id="url"
+             required
+             [(ngModel)]="link.url" name="url"
+             #url="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label for="topic">Topic</label>
+      <select class="form-control" id="topic"
+              required
+              [(ngModel)]="link.topic" name="topic"
+              #topic="ngModel">
+        <option *ngFor="let topic of topics" [value]="topic">{{topic}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input type="text" class="form-control" id="firstName"
+               required
+               [(ngModel)]="link.user.firstName" name="firstName"
+               #firstName="ngModel">
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input type="text" class="form-control" id="lastName"
+               required
+               [(ngModel)]="link.user.lastName" name="lastName"
+               #lastName="ngModel">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" class="form-control" id="email"
+               required
+               [(ngModel)]="link.user.email" name="email"
+               #email="ngModel">
+    </div>
+    <button type="button" class="btn btn-default" (click)="newLink()">Créer !</button>
+  </form>
+ </div>

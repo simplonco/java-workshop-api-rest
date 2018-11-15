@@ -1,3 +1,6 @@
-<p>
-  {{ dailyLinks }}
-</p>
+<h1>Liste des liens</h1>
+<ul>
+  <li *ngFor="let dailyLink of dailyLinks">
+    {{ dailyLink.url }}
+  </li>
+</ul>
